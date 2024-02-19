@@ -30,7 +30,7 @@
                 "closeOnExit": "never",
                 "colorScheme": "Espresso",
                 "commandline": "cmd.exe",
-                "cursorColor": "#00FF00",
+                "cursorColor": "#00FF00",                
                 "font": 
                 {
                     "face": "CaskaydiaCove NF"
@@ -38,7 +38,7 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "cmd",
-                "startingDirectory": "C:/"
+                "startingDirectory": "C:/Dev"
             },
             {
                 "closeOnExit": "never",
@@ -52,7 +52,7 @@
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": true,
                 "name": "Windows PowerShell",
-                "startingDirectory": "C:/"
+                "startingDirectory": "C:/Dev"
             },
             {
                 "closeOnExit": "never",
@@ -66,7 +66,7 @@
                 "hidden": false,
                 "name": "PowerShell Core",
                 "source": "Windows.Terminal.PowershellCore",
-                "startingDirectory": "C:/"
+                "startingDirectory": "C:/Dev"
             },
             {
                 "closeOnExit": "never",
@@ -81,7 +81,7 @@
                 "hidden": false,
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "C:\\"
+                "startingDirectory": "C:\\Dev"
             },
             {
                 "closeOnExit": "never",
@@ -95,14 +95,14 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure",
-                "startingDirectory": "C:/"
+                "startingDirectory": "C:/Dev"
             },
             {
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "hidden": false,
                 "name": "Ubuntu 20",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "C:\\"
+                "startingDirectory": "C:\\Dev"
             }
         ]
     },
