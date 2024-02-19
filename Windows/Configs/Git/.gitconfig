@@ -10,8 +10,8 @@
   cmd = code --wait $MERGED
 
 [user]
-	name = Mauro Da Silva
-	email = mauro.dasilva@outlook.com
+	name = David Cook
+	email = david@tripledsoftware.com.au
 	
 [alias]
 	# Obtained from http://haacked.com/archive/2014/07/28/github-flow-aliases/
@@ -69,3 +69,9 @@
 	recentlySeenVersion = 2.23.0.windows.1
 [pack]
 	useSparse = true
+[pull]
+	rebase = false
+[fetch]
+	prune = false
+[rebase]
+	autoStash = false
