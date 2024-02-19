@@ -28,12 +28,13 @@ Install-Module PSWindowsUpdate -Confirm:$false -Force | Out-Null
 #####################################################################################################################################################################################################
 
 # Microsoft Office
-Write-Host "Installing Microsoft Office (Interactive)" -ForegroundColor Green
-winget install Microsoft.Office --override "/configure https://raw.githubusercontent.com/mauro-dasilva/MachineSetup/master/Windows/Configs/Office/Configuration.xml" --accept-package-agreements --accept-source-agreements
+# Write-Host "Installing Microsoft Office (Interactive)" -ForegroundColor Green
+# winget install Microsoft.Office --override "/configure https://raw.githubusercontent.com/mauro-dasilva/MachineSetup/master/Windows/Configs/Office/Configuration.xml" --accept-package-agreements --accept-source-agreements
 
 # Visual Studio
 Write-Host "Installing Visual Studio Professional (Interactive)" -ForegroundColor Green
 winget install Microsoft.VisualStudio.2022.Professional -i --accept-package-agreements --accept-source-agreements
+# ASPNET.Web --Microsoft.NetCore.Component.Web
 
 #Azure Data Studio
 Write-Host "Installing Azure Data Studio" -ForegroundColor Green
@@ -48,8 +49,9 @@ Write-Host "    Installing Admin Tool Extension" -ForegroundColor Magenta
 azuredatastudio --install-extension microsoft.admin-tool-ext-win | Out-Null
 Write-Host "    Installing SQL Search Extension" -ForegroundColor Magenta
 azuredatastudio --install-extension redgate.sql-search | Out-Null
-Write-Host "    Installing Managed Instance Dashboard Extension" -ForegroundColor Magenta
-azuredatastudio --install-extension microsoft.managed-instance-dashboard | Out-Null
+# Write-Host "    Installing Managed Instance Dashboard Extension" -ForegroundColor Magenta
+# azuredatastudio --install-extension microsoft.managed-instance-dashboard | Out-Null
+# GitHub CoPilot Extension
 
 # Visual Studio Code
 Write-Host "Installing Visual Studio Code" -ForegroundColor Green
@@ -64,8 +66,8 @@ Write-Host "    Installing PowerShell Extension" -ForegroundColor Magenta
 code --install-extension ms-vscode.PowerShell | Out-Null
 Write-Host "    Installing One Monokai Theme" -ForegroundColor Magenta
 code --install-extension azemoh.one-monokai | Out-Null
-Write-Host "    Installing Docker Extension" -ForegroundColor Magenta
-code --install-extension PeterJausovec.vscode-docker | Out-Null
+# Write-Host "    Installing Docker Extension" -ForegroundColor Magenta
+# code --install-extension PeterJausovec.vscode-docker | Out-Null
 Write-Host "    Installing Git Lens Extension" -ForegroundColor Magenta
 code --install-extension eamodio.gitlens | Out-Null
 Write-Host "    Installing Spell Checker Extension" -ForegroundColor Magenta
@@ -78,13 +80,18 @@ Write-Host "    Installing YAML Extension" -ForegroundColor Magenta
 code --install-extension redhat.vscode-yaml | Out-Null
 Write-Host "    Installing Azure Resource Manager Tools" -ForegroundColor Magenta
 code --install-extension msazurermtools.azurerm-vscode-tools | Out-Null
-Write-Host "    Installing Remote Development Extension" -ForegroundColor Magenta
-code --install-extension ms-vscode-remote.vscode-remote-extensionpack | Out-Null
-Write-Host "    Installing React/Redux/GraphQL Snippets Extension" -ForegroundColor Magenta
-code --install-extension dsznajder.es7-react-js-snippets | Out-Null
-Write-Host "    Installing Azure IoT Tools" -ForegroundColor Magenta
-code --install-extension vsciot-vscode.azure-iot-tools | Out-Null
-
+# Write-Host "    Installing Remote Development Extension" -ForegroundColor Magenta
+# code --install-extension ms-vscode-remote.vscode-remote-extensionpack | Out-Null
+# Write-Host "    Installing React/Redux/GraphQL Snippets Extension" -ForegroundColor Magenta
+# code --install-extension dsznajder.es7-react-js-snippets | Out-Null
+# Write-Host "    Installing Azure IoT Tools" -ForegroundColor Magenta
+# code --install-extension vsciot-vscode.azure-iot-tools | Out-Null
+Write-Host "    Installing Prettier" -ForegroundColor Magenta
+code --install-extension esbenp.prettier-vscode	 | Out-Null
+Write-Host "    Installing GitHub CoPilot" -ForegroundColor Magenta
+code --install-extension GitHub.copilot | Out-Null
+Write-Host "    Installing Editor Config" -ForegroundColor Magenta
+code --install-extension EditorConfig.EditorConfig | Out-Null
 
 #Various Apps
 Write-Host "Installing Various Apps" -ForegroundColor Green
@@ -101,10 +108,10 @@ Write-Host "    Chrome" -ForegroundColor Green
 winget install Google.Chrome --accept-package-agreements --accept-source-agreements
 Write-Host "    Git" -ForegroundColor Magenta
 winget install Git.Git -e --accept-package-agreements --accept-source-agreements
-Write-Host "    Git Fork" -ForegroundColor Magenta
-winget install Fork.Fork --accept-package-agreements --accept-source-agreements
-Write-Host "    ImageGlass" -ForegroundColor Magenta
-winget install ImageGlass --accept-package-agreements --accept-source-agreements
+#Write-Host "    Git Fork" -ForegroundColor Magenta
+#winget install Fork.Fork --accept-package-agreements --accept-source-agreements
+#Write-Host "    ImageGlass" -ForegroundColor Magenta
+#winget install ImageGlass --accept-package-agreements --accept-source-agreements
 Write-Host "    Logitech Options" -ForegroundColor Magenta
 winget install Logitech.Options --accept-package-agreements --accept-source-agreements
 Write-Host "    Microsoft Edge" -ForegroundColor Green
@@ -113,8 +120,8 @@ Write-Host "    Microsoft PowerToys" -ForegroundColor Green
 winget install Microsoft.PowerToys --accept-package-agreements --accept-source-agreements
 Write-Host "    Microsoft Teams" -ForegroundColor Green
 winget install Microsoft.Teams --accept-package-agreements --accept-source-agreements
-Write-Host "    Microsoft ToDo" -ForegroundColor Green
-winget install 9NBLGGH5R558 -s msstore --accept-package-agreements --accept-source-agreements
+#Write-Host "    Microsoft ToDo" -ForegroundColor Green
+#winget install 9NBLGGH5R558 -s msstore --accept-package-agreements --accept-source-agreements
 Write-Host "    .Net Core" -ForegroundColor Green
 winget install Microsoft.dotnet --accept-package-agreements --accept-source-agreements
 Write-Host "    .Net Framework" -ForegroundColor Green
@@ -129,26 +136,36 @@ Write-Host "    Powershell Core" -ForegroundColor Green
 winget install Microsoft.Powershell --accept-package-agreements --accept-source-agreements
 Write-Host "    JetBrains Dot Ultimate" -ForegroundColor Magenta
 winget install JetBrains.dotUltimate -i --accept-package-agreements --accept-source-agreements
-Write-Host "    Screen2Gif" -ForegroundColor Green
-winget install NickeManarin.ScreenToGif --accept-package-agreements --accept-source-agreements
-Write-Host "    ShareX" -ForegroundColor Green
-winget install ShareX.ShareX --accept-package-agreements --accept-source-agreements
+#Write-Host "    Screen2Gif" -ForegroundColor Green
+#winget install NickeManarin.ScreenToGif --accept-package-agreements --accept-source-agreements
+#Write-Host "    ShareX" -ForegroundColor Green
+#winget install ShareX.ShareX --accept-package-agreements --accept-source-agreements
 Write-Host "    Slack" -ForegroundColor Green
 winget install SlackTechnologies.Slack --accept-package-agreements --accept-source-agreements
-Write-Host "    Steam" -ForegroundColor Green
-winget install Valve.Steam --accept-package-agreements --accept-source-agreements
+#Write-Host "    Steam" -ForegroundColor Green
+#winget install Valve.Steam --accept-package-agreements --accept-source-agreements
 Write-Host "    Sysinternals" -ForegroundColor Green
 winget install 9P7KNL5RWT25 -s msstore --accept-package-agreements --accept-source-agreements
-Write-Host "    Ubuntu V20.04.4" -ForegroundColor Green
-winget install 9MTTCL66CPXJ -s msstore --accept-package-agreements --accept-source-agreements
+#Write-Host "    Ubuntu V20.04.4" -ForegroundColor Green
+#winget install 9MTTCL66CPXJ -s msstore --accept-package-agreements --accept-source-agreements
 Write-Host "    VLC" -ForegroundColor Green
 winget install Videolan.Vlc --accept-package-agreements --accept-source-agreements
-Write-Host "    WhatsApp" -ForegroundColor Green
-winget install 9NKSQGP7F2NH -s msstore --accept-package-agreements --accept-source-agreements
+#Write-Host "    WhatsApp" -ForegroundColor Green
+#winget install 9NKSQGP7F2NH -s msstore --accept-package-agreements --accept-source-agreements
 Write-Host "    Windows Terminal" -ForegroundColor Green
 winget install Microsoft.WindowsTerminal --accept-package-agreements --accept-source-agreements
-Write-Host "    Zoom" -ForegroundColor Green
-winget install Zoom.Zoom --accept-package-agreements --accept-source-agreements
+#Write-Host "    Zoom" -ForegroundColor Green
+#winget install Zoom.Zoom --accept-package-agreements --accept-source-agreements
+Write-Host "    LinqPad 7" -ForegroundColor Green
+winget install -e --id LINQPad.LINQPad.7
+Write-Host "    Git Extensions" -ForegroundColor Green
+winget install -e --id GitExtensionsTeam.GitExtensions
+Write-Host "    Beyond Compare" -ForegroundColor Green
+winget install -e --id ScooterSoftware.BeyondCompare4
+Write-Host "    Snagit" -ForegroundColor Green
+winget install -e --id TechSmith.Snagit.2023
+
+
 
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User") 
 
@@ -276,10 +293,10 @@ ForEach ($CurrentAppName in $ApplicationList) {
 #####################################################################################################################################################################################################
 Write-Host "Downloading Remote Files" -ForegroundColor Green
 
-New-Item (Join-Path -Path $env:UserProfile -ChildPath "\.gitconfig") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mauro-dasilva/MachineSetup/master/Windows/Configs/Git/.gitconfig')) -Force | Out-Null
-New-Item (Join-Path -Path $env:UserProfile -ChildPath "\AppData\Roaming\Code\User\keybindings.json") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mauro-dasilva/MachineSetup/master/Windows/Configs/VSCode/keybindings.json')) -Force | Out-Null
-New-Item (Join-Path -Path $env:UserProfile -ChildPath "\AppData\Roaming\Code\User\settings.json") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mauro-dasilva/MachineSetup/master/Windows/Configs/VSCode/settings.json')) -Force | Out-Null
-New-Item (Join-Path -Path $env:UserProfile -ChildPath "\AppData\Local\packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mauro-dasilva/MachineSetup/master/Windows/Configs/Terminal/settings.json')) -Force | Out-Null
+New-Item (Join-Path -Path $env:UserProfile -ChildPath "\.gitconfig") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/cookdavid/PCSetup/master/Windows/Configs/Git/.gitconfig')) -Force | Out-Null
+New-Item (Join-Path -Path $env:UserProfile -ChildPath "\AppData\Roaming\Code\User\keybindings.json") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/cookdavid/PCSetup/master/Windows/Configs/VSCode/keybindings.json')) -Force | Out-Null
+New-Item (Join-Path -Path $env:UserProfile -ChildPath "\AppData\Roaming\Code\User\settings.json") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/cookdavid/PCSetup/master/Windows/Configs/VSCode/settings.json')) -Force | Out-Null
+New-Item (Join-Path -Path $env:UserProfile -ChildPath "\AppData\Local\packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json") -Type File -Value ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/cookdavid/PCSetup/master/Windows/Configs/Terminal/settings.json')) -Force | Out-Null
 
 #####################################################################################################################################################################################################
 #                                                   WINDOWS PREFERENCES
@@ -310,7 +327,7 @@ Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "EnablePerProcessSyst
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "Hidden" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 
 # Hide File Extensions
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -Type DWord -Value 1 -ErrorAction SilentlyContinue
+#Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 
 # Navigation Pane Shows The Current Folder
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "NavPaneExpandToCurrentFolder" -Type DWord -Value 1 -ErrorAction SilentlyContinue
@@ -462,10 +479,6 @@ If (!([System.Windows.Forms.Control]::IsKeyLocked('NumLock'))) {
 New-Item "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Explorer" -ErrorAction SilentlyContinue | Out-Null
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Explorer" -Name "NoUseStoreOpenWith" -Type DWord -Value 1 -ErrorAction SilentlyContinue
 
-# Enabling Driver Updates through Windows Update
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching" -Name "SearchOrderConfig" -Type DWord -Value 1 -ErrorAction SilentlyContinue
-Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" -Name "ExcludeWUDriversInQualityUpdate" -ErrorAction SilentlyContinue
-
 # Enable Remote Desktop
 Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1 -ErrorAction SilentlyContinue
@@ -594,10 +607,10 @@ Remove-Item "HKCR:\Directory\Background\shell\git_gui" -Recurse -ErrorAction Sil
 Remove-Item "HKCR:\Directory\Background\shell\git_shell" -Recurse -ErrorAction SilentlyContinue
 
 # Remove "Open with VS Code" From Context Menu  
-Remove-Item "HKCR:\Directory\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\Directory\Background\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
-Remove-Item -LiteralPath "HKCR:\*\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\Drive\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
+# Remove-Item "HKCR:\Directory\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
+# Remove-Item "HKCR:\Directory\Background\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
+# Remove-Item -LiteralPath "HKCR:\*\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
+# Remove-Item "HKCR:\Drive\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
 
 # Remove "Windows Media Player" From Context Menu  
 Remove-Item "HKCR:\Directory\shell\VSCode" -Recurse -ErrorAction SilentlyContinue
@@ -619,19 +632,6 @@ Remove-Item "HKCR:\SystemFileAssociations\.png\shell\3D Edit" -Recurse -ErrorAct
 Remove-Item "HKCR:\SystemFileAssociations\.stl\shell\3D Edit" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\SystemFileAssociations\.tif\shell\3D Edit" -Recurse -ErrorAction SilentlyContinue
 Remove-Item "HKCR:\SystemFileAssociations\.tiff\shell\3D Edit" -Recurse -ErrorAction SilentlyContinue
-
-# Remove "Set as Wallpaper" From Context Menu  
-Remove-Item "HKCR:\SystemFileAssociations\.bmp\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.dib\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.gif\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jfif\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jpe\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jpeg\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.jpg\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.png\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.tif\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.tiff\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
-Remove-Item "HKCR:\SystemFileAssociations\.wdp\shell\setdesktopwallpaper" -Recurse -ErrorAction SilentlyContinue
 
 # Remove "3D Print" From Context Menu
 Remove-Item "HKCR:\SystemFileAssociations\.3ds\shell\3D Print" -Recurse -ErrorAction SilentlyContinue	
@@ -722,9 +722,9 @@ Get-ChildItem -Path $Source -Include '*.ttf', '*.ttc', '*.otf' -Recurse | ForEac
 Write-Host "Adding/Removing Windows Features" -ForegroundColor Green
 
 Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux" -NoRestart -ErrorAction SilentlyContinue | Out-Null
-Enable-WindowsOptionalFeature -Online -FeatureName "VirtualMachinePlatform" -NoRestart -ErrorAction SilentlyContinue | Out-Null
-Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-All" -NoRestart -ErrorAction SilentlyContinue | Out-Null
-Enable-WindowsOptionalFeature -Online -FeatureName "Containers-DisposableClientVM" -NoRestart -ErrorAction SilentlyContinue | Out-Null
+# Enable-WindowsOptionalFeature -Online -FeatureName "VirtualMachinePlatform" -NoRestart -ErrorAction SilentlyContinue | Out-Null
+# Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-All" -NoRestart -ErrorAction SilentlyContinue | Out-Null
+# Enable-WindowsOptionalFeature -Online -FeatureName "Containers-DisposableClientVM" -NoRestart -ErrorAction SilentlyContinue | Out-Null
 Disable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRestart -ErrorAction SilentlyContinue | Out-Null
 Disable-WindowsOptionalFeature -Online -FeatureName "MediaPlayback" -NoRestart -ErrorAction SilentlyContinue | Out-Null
 Disable-WindowsOptionalFeature -Online -FeatureName "Printing-XPSServices-Features" -NoRestart -ErrorAction SilentlyContinue | Out-Null
@@ -736,8 +736,8 @@ Disable-WindowsOptionalFeature -Online -FeatureName "Printing-Foundation-Interne
 Write-Host "Installing Windows Subsystem for Linux (Ubuntu)" -ForegroundColor Green
 wsl.exe --install
 
-Write-Host "Setting Up Dev Drive" -ForegroundColor Green
-Format-Volume -DriveLetter D -DevDrive
+# Write-Host "Setting Up Dev Drive" -ForegroundColor Green
+# Format-Volume -DriveLetter D -DevDrive
 
 #####################################################################################################################################################################################################
 #                                                  KEYBOARD PREFERENCES
@@ -759,12 +759,12 @@ Remove-Item "$env:UserProfile\Desktop\*.lnk"
 
 Write-Host "    Creating Folders" -ForegroundColor Magenta
 
-If (-Not (Test-Path "C:\Personal")) {
-    New-Item "C:\Personal" -ItemType Directory | Out-Null
-}
+#If (-Not (Test-Path "C:\Personal")) {
+#    New-Item "C:\Personal" -ItemType Directory | Out-Null
+#}
 
-If (-Not (Test-Path "C:\Source Code")) {
-    New-Item "C:\Source Code" -ItemType Directory | Out-Null
+If (-Not (Test-Path "C:\Dev")) {
+    New-Item "C:\Dev" -ItemType Directory | Out-Null
 }
 
 Stop-Process -ProcessName explorer
